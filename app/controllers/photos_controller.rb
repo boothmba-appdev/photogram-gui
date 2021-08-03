@@ -6,13 +6,26 @@ class PhotosController < ApplicationController
   end
 
   def show
-    url_username = params.fetch("path_username")
-    matching_usernames = User.where({ :username => url_username })
-    @the_user = matching_usernames.at(0)
-    if @the_user == nil
+    url_id = params.fetch("path_id")
+    matching_photos = Photo.where({ :id => url_id })
+    @the_photo = matching_photos.at(0)
+    if @the_photo == nil
       redirect_to("/404")
     else
-      render({ :template => "user_templates/show.html.erb" })
+      render({ :template => "photo_templates/show.html.erb" })
+    end
+  end
+
+  def baii
+    url_id = params.fetch("toast_id")
+    matching_photos = Photo.where({ :id => url_id })
+    the_photo = matching_photos.at(0)
+    if the_photo == nil
+      redirect_to("/404")
+    else
+      the_photo.destroy
+      #render({ :template => "photo_templates/baii.html.erb" })
+      redirect_to("/photos")
     end
   end
 end
