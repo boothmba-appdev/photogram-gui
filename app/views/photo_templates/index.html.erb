@@ -2,15 +2,15 @@
 <html>
   <body>
 
-  <form action="/insert_photo_record">
-    <label for="browser_input">Image</label>
-    <input id="browser_input" type="text" name="input_image" placeholder="Enter a URL for the image...">
+  <form action="/insert_photo">
+    <label for="image_box">Image</label>
+    <input id="image_box" type="text" name="query_image" placeholder="Enter a URL for the image...">
 
-    <label for="browser_caption">Caption</label>
-    <textarea id="browser_caption" name="input_caption" placeholder="Enter a caption for the photo..."></textarea>
+    <label for="caption_box">Caption</label>
+    <textarea id="caption_box" name="query_caption" placeholder="Enter a caption for the photo..."></textarea>
 
-    <label for="browser_user_id">Owner ID</label>
-    <input id="browser_user_id" type="text" name="input_owner_id" placeholder="Enter an ID of a User">
+    <label for="owner_id_box">Owner ID</label>
+    <input id="owner_id_box" type="text" name="query_owner_id" placeholder="Enter an ID of a User">
 
     <button>Add photo</button>
   </form>
